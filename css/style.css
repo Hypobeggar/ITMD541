@@ -21,7 +21,7 @@ body{
 }
 #content-main{
     margin-left: .75em;
-    margin-right: .75em;
+
 }
 
 h1{
@@ -50,7 +50,7 @@ h3{
 }
 
 img{
-    width: 98vw;
+    width: 96vw;
     border-radius: 5px;
     padding-top: 0.25em;
 }

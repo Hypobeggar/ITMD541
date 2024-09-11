@@ -56,5 +56,23 @@ img{
 }
 
 @media screen and (min-width: 600px) {
+
+
+
+
+
     
+    img{
+        max-width: 30vw;
+        height: 35vw;
+        border-radius: 10px;
+    }
+    .hobby{
+        display: flex;
+
+        justify-content: space-around;
+    }
+    #games{
+        padding-top: 2em;
+    }
   }

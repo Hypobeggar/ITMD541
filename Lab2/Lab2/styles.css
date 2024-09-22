@@ -16,7 +16,7 @@
 	list-style-type: none;
 	display: flex;
 	padding-left: 0px;
-	flex-direction: row;
+
 }
 
 #flex-section2 li {
@@ -42,11 +42,18 @@
 /* Flexbox Part 3 */
 
 #flex-section3 .box {
-
+	display: flex;
+	padding-left: 0px;
+	align-items: center;
+	justify-content: center;
 }
 
 #flex-section3 .tags ul {
-
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0px;
+	margin:0px;
 }
 
 /* end Flexbox Part 3 */

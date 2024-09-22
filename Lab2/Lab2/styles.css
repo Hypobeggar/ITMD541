@@ -62,7 +62,10 @@
 /* Grid Part 1 */
 
 #grid-section1 .grid {
-
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 100px 100px;
+	gap: 20px;
 }
 
 /* end Grid Part 1 */

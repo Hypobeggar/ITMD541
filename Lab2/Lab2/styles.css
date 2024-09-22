@@ -1,10 +1,10 @@
 /* Flexbox Part 1 */
 
 #flex-section1 ul {
-display: flex;
-list-style-type: none;
-justify-content: space-evenly;
-padding-left: 0px;
+	display: flex;
+	list-style-type: none;
+	justify-content: space-evenly;
+	padding-left: 0px;
 }
 
 /* end Flexbox Part 1 */
@@ -13,11 +13,14 @@ padding-left: 0px;
 /* Flexbox Part 2 */
 
 #flex-section2 ul {
-
+	list-style-type: none;
+	display: flex;
+	padding-left: 0px;
+	flex-direction: row;
 }
 
 #flex-section2 li {
-
+	flex: 2;
 }
 
 #flex-section2 .item1 {
@@ -25,6 +28,7 @@ padding-left: 0px;
 }
 
 #flex-section2 .item2 {
+	order:3;
 
 }
 

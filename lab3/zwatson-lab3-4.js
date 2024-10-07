@@ -5,3 +5,4 @@ function celsiusToFahrenheit(cels){
 }
 celsiusToFahrenheit(43)
 celsiusToFahrenheit('26F')
+celsiusToFahrenheit(269)

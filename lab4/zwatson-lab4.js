@@ -13,11 +13,34 @@ document.querySelector('#hero > a').remove();
 
 
 const ctaSection = document.createElement('section');
+ctaSection.setAttribute("id", "ctaSection");
+
 document.getElementsByTagName('main')[0].insertBefore(ctaSection, document.querySelector('#services'));
 
-
 const newCta = document.createElement('a');
+newCta.innerHTML="Schedule a New Consulation Today";
+newCta.setAttribute("id", "newCta");
+newCta.classList.add("relative","border-blue-600", "border-4","bg-white", "text-blue", "px-6", "py-2", "rounded", "z-20");
 
+const style1 = document.createElement('style');
+ctaSection.append(newCta);
+style1.innerHTML= `
+    #ctaSection {
+        display: flex;
+        align-items: center;
+        background-color: #6495ed;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        justify-content:center;
+    }
+
+    #newCta{
+        border: 4px;
+
+    }
+
+    `;
+document.head.appendChild(style1);
 
 }
 )();

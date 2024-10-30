@@ -33,6 +33,19 @@ products.classList.add('lg:grid-cols-4');
 
 
 document.querySelector('#solutions > div > div > div:nth-child(4) > img').src = 'https://picsum.photos/id/453/400/300'
+let form= document.getElementsByTagName('form')[0];
+
+let name= document.getElementById('name');
+let email= document.getElementById('email');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    if (name.value && email.value) {
+        alert("Thank you, ${name.value}! We will be in touch with you shortly at ${email.value}.");
+    } else {
+        alert("Please provide a name and email.");
+    }
+});
 
 style1.innerHTML= `
     #ctaSection {

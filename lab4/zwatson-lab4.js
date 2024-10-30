@@ -26,6 +26,14 @@ newCta.addEventListener("click", function(){window.alert("Thank You for your int
 
 const style1 = document.createElement('style');
 ctaSection.append(newCta);
+document.querySelector('#services > div > div > div:nth-child(1) > span').innerHTML= "ads_click";
+
+let products= document.querySelector('#solutions > div > div');
+products.classList.add('lg:grid-cols-4');
+
+
+document.querySelector('#solutions > div > div > div:nth-child(4) > img').src = 'https://picsum.photos/id/453/400/300'
+
 style1.innerHTML= `
     #ctaSection {
         display: flex;
@@ -40,6 +48,11 @@ style1.innerHTML= `
 
 
     }
+    .material-symbols-outlined{
+        color:#6495ed;
+    
+    }
+
 
     `;
 document.head.appendChild(style1);

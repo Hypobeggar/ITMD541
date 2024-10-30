@@ -41,7 +41,7 @@ let email= document.getElementById('email');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     if (name.value && email.value) {
-        alert("Thank you, ${name.value}! We will be in touch with you shortly at ${email.value}.");
+        alert(`Thank you, ${name.value}! We will be in touch with you shortly at ${email.value}.`);
     } else {
         alert("Please provide a name and email.");
     }

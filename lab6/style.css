@@ -1,0 +1,17 @@
+main{
+    background-image: linear-gradient(to bottom right, #712998, yellow);
+
+}
+.nav-link{
+    font-size: 1.25em;
+    
+    color: #712998;
+}
+a{
+    text-decoration: none;
+    color: #EDCB4E;
+}
+
+.fs-4{
+    color: #EDCB4E; 
+}

@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-
+      
       
         <div class="container">
             <header class="d-flex flex-column flex-md-row justify-content-center py-3 mb-4 border-bottom ">
@@ -26,12 +26,31 @@
             </ul>
             </header>
         </div>
+        <div class="container mt-5">
+          <div class="d-flex justify-content-center mt-2">
+              <button class="btn btn-primary dropdown-toggle getlocation btn-lg" type="button" id="dropdownbutton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select a Location
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownbutton">
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('New York City')">New York City</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Chicago, IL')">Chicago, IL</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Philadelphia, PA')">Philadelphia, PA</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Boston, MA')">Boston, MA</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Florida, United States')">Florida, United States</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Las Vegas, NV')">Las Vegas, NV</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Auburn, CA')">Auburn, CA</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('St. Louis, MO')">St. Louis, MO</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Washington D.C.')">Washington D.C.</button></li>
+                  <li><button class="dropdown-item" onclick="dropSunriseSunset('Toronto, ON')">Toronto, ON</button></li>
+              </ul>
+          </div>
+      </div>
+      <div class="d-flex justify-content-center"><button id="get-current-location" class="getlocation btn mt-2 btn-primary btn-lg">Get Current Location Times</button></div>
         
-        <button id="get-current-location" class="getlocation btn mt-5 btn-primary btn-lg">Get Current Location Times</button>
         <div class="container px-4 py-5" id="custom-cards">
           <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
             <div class="col">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
                 <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
                   <h3 class="display-6 lh-1 fw-bold">Today</h3>
                   <div class="cols-2 d-flex justify-content-around">
@@ -40,31 +59,68 @@
                       <ul class="list-unstyled px-4 text-center">
                         <li><p class="sun-top display-5">Sunrise</p></li>
                         <li><img  class="sun-icon" src="./imgs/sunrise.png" alt="Sunrise Icon"></li>
-                        <li><p class="fs-4">Dawn:</p></li>
+                        <li><p id="today-sunrise-time"class="fs-4">Time:</p></li>
+                        <li><p id="today-dawn-time" class="fs-5">Dawn:</p></li>
                       </ul>
                       <ul class="list-unstyled px-4 text-center">
                         <li><p class="sun-top display-5">Sunset</p></li>
                         <li><img  class="sun-icon" src="./imgs/sunset.png" alt="Sunset Icon"></li>
-                        <li><p class="fs-4">Dusk:</p></li>
+                        <li><p id="today-sunset-time" class="fs-4">Time:</p></li>
+                        <li><p id="today-dusk-time" class="fs-5">Dusk:</p></li>
                       </ul>
                     </div>
                   </div>
         
-                  <ul class="d-flex flex-column list-unstyled mt-auto align-items-center">
-                    <li class="d-flex align-items-center mb-2">
-                      <p class="fs-3">Day Length:</p>
+                  <ul class="d-flex flex-column list-unstyled mt-auto mb-0 align-items-center">
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="today-day-length"class="fs-5">Day Length:</p>
                     </li>
-                    <li class="d-flex align-items-center mb-2">
-                      <p class="fs-3">Solar Noon:</p>
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="today-solar-noon"class="fs-4">Solar Noon:</p>
                     </li>
-                    <li class="d-flex align-items-center mb-2">
-                      <p class="fs-3">Time Zone</p>
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="today-time-zone" class="fs-5">Time Zone</p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
+                  <h3 class="display-6 lh-1 fw-bold">Tomrrow</h3>
+                  <div class="cols-2 d-flex justify-content-around">
+                    <!-- Card information 2-->
+                    <div class="sun-info d-flex justify-content-between">
+                      <ul class="list-unstyled px-4 text-center">
+                        <li><p class="sun-top display-5">Sunrise</p></li>
+                        <li><img  class="sun-icon" src="./imgs/sunrise.png" alt="Sunrise Icon"></li>
+                        <li><p id="tom-sunrise-time"class="fs-4">Time:</p></li>
+                        <li><p id="tom-dawn-time" class="fs-5">Dawn:</p></li>
+                      </ul>
+                      <ul class="list-unstyled px-4 text-center">
+                        <li><p class="sun-top display-5">Sunset</p></li>
+                        <li><img  class="sun-icon" src="./imgs/sunset.png" alt="Sunset Icon"></li>
+                        <li><p id="tom-sunset-time" class="fs-4">Time:</p></li>
+                        <li><p id="tom-dusk-time" class="fs-5">Dusk:</p></li>
+                      </ul>
+                    </div>
+                  </div>
+        
+                  <ul class="d-flex flex-column list-unstyled mt-auto mb-0 align-items-center">
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="tom-day-length"class="fs-5">Day Length:</p>
+                    </li>
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="tom-solar-noon"class="fs-4">Solar Noon:</p>
+                    </li>
+                    <li class="d-flex align-items-center mb-1">
+                      <p id="tom-time-zone" class="fs-5">Time Zone</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
 
             
@@ -73,7 +129,8 @@
         
 
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 </body>
 </html>

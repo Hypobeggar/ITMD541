@@ -5,7 +5,7 @@ main{
     margin-left: 5vw;
     margin-right: 5vw;
     background-image: linear-gradient(to bottom right, #712998, yellow);
-    height: 100vh;
+    min-height: 100vh;
 
 }
 .nav-link{
@@ -25,10 +25,8 @@ a{
 .border-bottom{
     border-color: aqua !important;
 }
-#get-current-location{
-    margin-left: 35vw;
-    margin-right: 35vw;
-    min-width: 170px;
+.getlocation{
+    min-width: 200px;
     background-color: #712998;
     border-color: yellow;
 }
@@ -41,7 +39,4 @@ li{
 .sun-icon{
     height: 70%;
     width: 70%;
-}
-.sun-top{
-
 }

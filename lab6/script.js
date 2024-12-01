@@ -16,7 +16,7 @@ function dropSunriseSunset(location) {
     const url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
     const url1 = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=tomorrow&formatted=0`;
     getData(url,url1)
-
+    document.getElementById("location").innerText = `Showing ${location}`;
 }
 
 function getData(url, url1){
@@ -73,6 +73,19 @@ function getData(url, url1){
         })
         .catch(error => alert(`Error: ${error.message}`));
 }
+function getLocation(lat, lng) {
+    const geocodeUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`;
+
+    fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("location").innerText = `Showing ${data.address.city}, ${data.address.state}`;
+        })
+        .catch(error => {
+            console.error(`Geocoding Error: ${error.message}`);
+            document.getElementById("location-name").innerText = "Showing Unknown";
+        });
+}
 document.getElementById('get-current-location').addEventListener('click', function() {
 
         navigator.geolocation.getCurrentPosition(position => {
@@ -81,7 +94,7 @@ document.getElementById('get-current-location').addEventListener('click', functi
             const url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
             const url1 = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=tomorrow&formatted=0`;
             getData(url,url1)
-        
+            getLocation(lat, lng)
         }, error => {
             console.error(`Error: ${error.message}`);
         });
